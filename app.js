@@ -11,7 +11,7 @@ app.use(express.static("public"))
 day = date.getDate();
 console.log(day)
 
-mongoose.connect("mongodb+srv://aa1283:kayslay1995@cluster0.6pdqp.mongodb.net/items?retryWrites=true&w=majority")
+mongoose.connect("clusterLink")
 
 
 //   DATA STRUCTURE
