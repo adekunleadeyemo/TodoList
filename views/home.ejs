@@ -1,0 +1,27 @@
+<%- include("partials/header") -%>
+
+
+<div class="box" id="heading" >
+    <h1> Welcome to Your Todo List</h1>
+</div>
+
+<div class="box">
+    <!-- This form shows the todo lists in the Lists -->
+    <% todoLists.forEach(function(todoList){%> 
+        <div class="item">
+            <form class="item" action="/delete" method="post">
+                <input  type="checkbox" name="checkbox" value= <%= todoList._id %> onchange="this.form.submit()">
+                <p><%= todoList.name %></p>
+                <input type="hidden" name="listName" value=""></input>
+            </form>
+        </div>
+    <% }) %>
+   
+    <form action="/" method="post">
+        <input type="text" name="newTL" placeholder="Create New Todo list here">
+        <button type="submit" name="button">+</button>
+    </form>
+</div>
+
+
+<%- include("partials/footer") -%>
